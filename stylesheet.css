@@ -1,0 +1,266 @@
+body {
+    background-color: #838383;
+}
+
+#content {
+    width: 425px;
+    height: 690px;
+    margin: 20px auto;
+}
+
+#pageheader {
+    height: 80px;
+    width: 250px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.pHeader {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#title {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+#myName {
+    font-size: 20px;
+    margin-bottom: 7px;
+    margin-left: 3px;
+}
+
+#TOPlink {
+    margin-left: 3px;
+}
+
+.wLink {
+    color: rgb(226, 192, 0);
+    text-decoration: none;
+}
+
+.wLink:hover {
+    color: rgb(196, 46, 46);
+}
+
+#container {
+    width: 425px;
+    height: 690px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 0px auto;
+    background-color: rgb(60, 60, 60);
+    border: 7px double #838383;
+}
+
+#display {
+    border-radius: 7px;
+    background-color: #d3f3d3;
+    margin: 20px;
+    padding: 5px;
+    height: 120px;
+    width: auto;
+    display: grid;
+    grid-template-areas: 
+    "arith"
+    "solution"
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 60%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#solution {
+    grid-area: solution;
+    justify-self: right;
+    margin-right: 10px;
+    margin:auto 10px;
+    font-size: 30px;
+}
+
+#arith {
+    grid-area: arith;
+    justify-self: right;
+    margin-right: 10px;
+    margin:auto 10px;
+    font-size: 18px;
+}
+
+
+#buttons {
+    background-color: rgb(45, 45, 45);
+    border-radius: 7px;
+    height: 495px;
+    width: 390px;
+    margin: auto;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-areas: 
+    "ac div mult sub"
+    "seven eight nine add"
+    "four five six add"
+    "one two three ent"
+    "zero dec del ent"
+    ;
+}
+
+button.input {
+    margin: 5px;
+    color: rgb(216, 194, 194);
+    background-color: rgb(60, 60, 60);
+    border-radius: 5px;
+    font-size: 23px;
+}
+
+.input:hover {
+    background-color: rgb(80, 80, 80);
+}
+
+button.input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+button.input:active {
+    transform: scale(.95);
+}
+
+.font {
+    font-family: 'Titillium Web', sans-serif;
+    border: 2px solid rgb(80, 80, 80);
+}
+
+.func {
+    border: 2px solid rgb(136, 53, 43);
+}
+
+.purp {
+    border: 2px solid rgb(83, 81, 122);
+}
+
+.green {
+    border: 2px solid rgb(56, 108, 62);
+}
+
+.purp .font {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#calc {
+    grid-area: ent;
+    background-color: rgb(36, 78, 42);
+    font-size: 30px;
+}
+
+#calc:hover {
+    background-color: rgb(56, 108, 62);
+}
+
+#divide {
+    grid-area: div;
+    background-color: rgb(116, 23, 23);
+    font-size: 30px;
+}
+
+#divide:hover {
+    background-color: rgb(136, 53, 43);
+}
+
+#divide:active {
+    background-color: rgb(136, 53, 43);
+}
+
+#add {
+    grid-area: add;
+    background-color: rgb(116, 23, 23);
+    font-size: 30px;
+}
+
+#add:hover {
+    background-color: rgb(136, 53, 43);
+}
+
+#multiply {
+    grid-area: mult;
+    background-color: rgb(116, 23, 23);
+    font-size: 30px;
+}
+
+#multiply:hover {
+    background-color: rgb(136, 53, 43);
+}
+
+#delete {
+    grid-area: ac;
+    background-color: rgb(63, 51, 102);
+}
+
+#delete:hover {
+    background-color: rgb(83, 81, 122);
+}
+
+#dec {
+    grid-area: dec;
+}
+
+#subtract {
+    grid-area: sub;
+    background-color: rgb(116, 23, 23);
+    font-size: 30px;
+}
+
+#subtract:hover {
+    background-color: rgb(136, 53, 43);
+}
+
+#clear {
+    grid-area: del;
+    font-size: 30px;
+    background-color: rgb(63, 51, 102);
+}
+
+#clear:hover {
+    background-color: rgb(83, 81, 122);
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+
+#three {
+    grid-area: three;
+}
+
+#four {
+    grid-area: four;
+}
+
+#five {
+    grid-area: five;
+}
+
+#six {
+    grid-area: six;
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#zero {
+    grid-area: zero;
+}
