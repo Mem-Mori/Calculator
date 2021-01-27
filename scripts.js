@@ -9,6 +9,7 @@ document.getElementById("delete").addEventListener('click', function() {
     temp = [];
     operation = [];
     display = [];
+    operatorOff();
     document.getElementById('arith').textContent = '';
     document.getElementById('solution').textContent = '';
 });
@@ -26,8 +27,7 @@ document.getElementById("divide").addEventListener('click', function() {
     display.push(' / ');
     document.getElementById('arith').textContent = display.join('');
     decimal();
-    let tButton = document.getElementById('divide');
-    tButton.disabled = true;
+    operatorOff();
     solution = [];
 });
 
@@ -44,8 +44,7 @@ document.getElementById("multiply").addEventListener('click', function() {
     display.push(' * ');
     document.getElementById('arith').textContent = display.join('');
     decimal();
-    let tButton = document.getElementById('multiply');
-    tButton.disabled = true;
+    operatorOff();
     solution = [];
 });
 
@@ -62,8 +61,7 @@ document.getElementById("subtract").addEventListener('click', function() {
     display.push(' - ');
     document.getElementById('arith').textContent = display.join('');
     decimal();
-    let tButton = document.getElementById('subtract');
-    tButton.disabled = true;
+    operatorOff();
     solution = [];
 });
 
@@ -80,8 +78,7 @@ document.getElementById("add").addEventListener('click', function() {
     display.push(' + ');
     document.getElementById('arith').textContent = display.join('');
     decimal();
-    let tButton = document.getElementById('add');
-    tButton.disabled = true;
+    operatorOff();
     solution = [];
     
 });
@@ -91,7 +88,7 @@ document.getElementById("one").addEventListener('click', function() {
     temp.push('1');
     display.push('1');
     update();
-    buttonOn();
+    operatorOn();
 });
 
 // Two
@@ -99,7 +96,7 @@ document.getElementById("two").addEventListener('click', function() {
     temp.push('2');
     display.push('2');
     update();
-    buttonOn();
+    operatorOn();
 });
 
 // Three
@@ -107,7 +104,7 @@ document.getElementById("three").addEventListener('click', function() {
     temp.push('3');
     display.push('3');
     update();
-    buttonOn();
+    operatorOn();
 });
 
 // Four
@@ -115,6 +112,7 @@ document.getElementById("four").addEventListener('click', function() {
     temp.push('4');
     display.push('4');
     update();
+    operatorOn();
 });
 
 // Five
@@ -122,7 +120,7 @@ document.getElementById("five").addEventListener('click', function() {
     temp.push('5');
     display.push('5');
     update();
-    buttonOn();
+    operatorOn();
 });
 
 // Six
@@ -130,7 +128,7 @@ document.getElementById("six").addEventListener('click', function() {
     temp.push('6');
     display.push('6');
     update();
-    buttonOn();
+    operatorOn();
 });
 
 // Seven
@@ -138,7 +136,7 @@ document.getElementById("seven").addEventListener('click', function() {
     temp.push('7');
     display.push('7');
     update();
-    buttonOn();
+    operatorOn();
 });
 
 // Eight
@@ -146,7 +144,7 @@ document.getElementById("eight").addEventListener('click', function() {
     temp.push('8');
     display.push('8');
     update();
-    buttonOn();
+    operatorOn();
 });
 
 // Nine
@@ -154,7 +152,7 @@ document.getElementById("nine").addEventListener('click', function() {
     temp.push('9');
     display.push('9');
     update();
-    buttonOn();
+    operatorOn();
 });
 
 // Zero
@@ -162,12 +160,14 @@ document.getElementById("zero").addEventListener('click', function() {
     temp.push('0');
     display.push('0');
     update();
-    buttonOn();
+    operatorOn();
 });
 
 // Back / delete last entry key
 document.getElementById("clear").addEventListener('click', function() {
     temp.pop();
+    display.pop();
+    document.getElementById('arith').textContent = display.join('');
 });
 
 
@@ -226,8 +226,24 @@ const operate = function(num1, operator, num2) {
     
 }
 
+
+//Start with operator keys disabled to force number entry
+const operatorOff = function() {
+    let aButton = document.getElementById('add');
+    let sButton = document.getElementById('subtract');
+    let mButton = document.getElementById('multiply');
+    let dButton = document.getElementById('divide');
+    aButton.disabled = true;
+    sButton.disabled = true;
+    mButton.disabled = true;
+    dButton.disabled = true;
+}
+
+//Start with operator keys disabled to force number input
+operatorOff();
+
 // Reactivate operator keys/buttons
-const buttonOn = function() {
+const operatorOn = function() {
     let aButton = document.getElementById('add');
     let sButton = document.getElementById('subtract');
     let mButton = document.getElementById('multiply');
@@ -256,7 +272,7 @@ const calculate = function() {
     display = [];
     display.push(solution[0]);
     decimal();
-    buttonOn();
+    operatorOn();
 }
 
 // Keypress Integration
@@ -334,6 +350,10 @@ window.onkeydown = function(event) {
             break;
         case '.':
             choice = document.querySelector('#dec');
+            choice.click();
+            break;
+        case 'Delete':
+            choice = document.querySelector('#delete');
             choice.click();
             break;
     }

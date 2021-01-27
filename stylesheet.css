@@ -35,7 +35,7 @@ body {
 }
 
 .wLink {
-    color: rgb(226, 192, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
@@ -217,7 +217,7 @@ button.input:active {
 
 #clear {
     grid-area: del;
-    font-size: 30px;
+    font-size: 23px;
     background-color: rgb(63, 51, 102);
 }
 
@@ -263,4 +263,15 @@ button.input:active {
 
 #zero {
     grid-area: zero;
+}
+
+#keys {
+    font-size: 15px;
+    font-family: 'Titillium Web', sans-serif;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#spacing {
+    margin-bottom: 5px;
 }
