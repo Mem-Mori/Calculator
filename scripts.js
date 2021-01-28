@@ -196,9 +196,16 @@ const update = function() {
 // Quick maffs
 const operate = function(num1, operator, num2) {
     if ( (num1 == 0) && operator == ' / ' && (num2 == 0) ) {
-        solution.push('Physics Engine has Crashed');
+        solution.push('0');
+        operation = [];
+        temp = [];
+        temp.push('0');
+        alert('Can not compute, physics engine has crashed!');
     } else if ((num2 == 0) && (operator == ' / ')) {
-        solution.push('Divide by 0 Error');
+        solution.push('0');
+        operation = [];
+        temp = [];
+        alert('Divide by 0 error.');
         } else {
             switch (operator) {
                 case ' + ':
@@ -260,7 +267,7 @@ const decimal = function() {
     button.disabled = false;
 }
 
-// Enter key processes, seperated to be used with operator keys
+// Enter-key processes, seperated to be used with operator keys
 const calculate = function() {
     operation.push(temp.join(''))
     solution = [];
